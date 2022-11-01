@@ -28,6 +28,33 @@ class LinkedList {
         }
     }
 
+    insertAfter(value, afterValue) {
+        const existingNode = this.find(afterValue);
+
+        if (existingNode) {
+            const newNode = { value, next: existingNode.next };
+            existingNode.next = newNode;
+
+        }
+    }
+
+    find(value) {
+        if (!this.head) {
+            return null;
+        }
+
+        let pointer = this.head;
+
+        while(pointer.next) {
+            if (pointer.value === value) {
+                return pointer;
+            }
+            pointer = pointer.next;
+        }
+
+        return null;
+    }
+
     delete(value) {
         if (!this.head) {
             return;
