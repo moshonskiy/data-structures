@@ -1,3 +1,16 @@
+// no need to specify list size
+// can be useful for insertions at the beginning in comparison to array
+
+//                                      time complexity
+//                          linked list                  array
+
+// element access               O(n)                      O(1)
+// insertion at the end         O(1) w/ tail              O(1)
+//                              O(n) w/out tail
+// insertion at the beginning   O(1)                      O(n)
+// insertion in the middle      O(1) + search time        O(n)
+// search time                  O(n)                      O(n)
+
 class LinkedList {
     constructor() {
         this.head = null;
